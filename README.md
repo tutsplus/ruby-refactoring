@@ -5,10 +5,12 @@ Premium. Each example contains:
 
 * Two code sample files, _before_ and _after_ refactoring;
 * A test suite;
-* A `Rakefile` with two tasks:
+* A `Rakefile` with a test task.
 
-  - `test:before` to test the code sample before refactoring;
-  - `test:after` to test the code sample after refactoring.
+  - To run the tests against the code sample _before_ refactoring, run
+    `BEFORE=1 rake test`;
+  - To run the tests against the code sample _before_ refactoring, run `rake
+    test`;
 
 ## Course outline
 
