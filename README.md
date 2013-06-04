@@ -74,21 +74,21 @@ possible refactoring patterns to solve it.
 
 ### Refactoring Patterns
 
-* [x] Extract Class
-* [x] Extract Method
-* [x] Form Template Method
-* [x] Hide Delegate
-* [x] Introduce Assertion
-* [x] Introduce Null Object
-* [x] Separate Query from Modifier
-* [x] Move Field
-* [x] Parameterize Method
-* [x] Preserve Whole Object
-* [x] Pull Up Method
-* [x] Rename Method
-* [x] Replace Array with Object
-* [x] Replace Method with Method Object
-* [x] Replace Temp with Query
-* [-] Replace Type Code with Module Extension
-* [x] Replace Type Code with Polymorphism
-* [-] Replace Type Code with State/Strategy
+* Extract Class
+* Extract Method
+* Form Template Method
+* Hide Delegate
+* Introduce Assertion
+* Introduce Null Object
+* Separate Query from Modifier
+* Move Field
+* Parameterize Method
+* Preserve Whole Object
+* Pull Up Method
+* Rename Method
+* Replace Array with Object
+* Replace Method with Method Object
+* Replace Temp with Query
+* Replace Type Code with Module Extension
+* Replace Type Code with Polymorphism
+* Replace Type Code with State/Strategy
