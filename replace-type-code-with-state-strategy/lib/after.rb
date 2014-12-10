@@ -1,3 +1,9 @@
+STRATEGIES = {
+  :password => 'Auth::Password',
+  :public_key => 'Auth::PublicKey',
+  :oauth => 'Auth::OAuth'
+}
+
 class User
   attr_reader :name, :type, :options
 
@@ -6,14 +12,7 @@ class User
     @type    = type
     @options = options
 
-    @strategy = case @type
-      when :password
-        Auth::Password.new self
-      when :public_key
-        Auth::PublicKey.new self
-      when :oauth
-        Auth::OAuth.new self
-    end
+    @strategy = Class.const_get(STRATEGIES[type]).new(self)
   end
   
   def auth! options
