@@ -1,9 +1,3 @@
-STRATEGIES = {
-  :password => 'Auth::Password',
-  :public_key => 'Auth::PublicKey',
-  :oauth => 'Auth::OAuth'
-}
-
 class User
   attr_reader :name, :type, :options
 
@@ -11,11 +5,10 @@ class User
     @name    = name
     @type    = type
     @options = options
-
-    @strategy = Class.const_get(STRATEGIES[type]).new(self)
   end
   
   def auth! options
+    @strategy ||= Auth::Strategies[type].new self
     @strategy.auth? options
   end
 
@@ -60,5 +53,16 @@ module Auth
       true
     end
   
+  end
+
+  class Strategies
+    @@strategies = {
+      password: Password,
+      public_key: PublicKey,
+      oauth: OAuth
+    }
+    def self.[] type
+      @@strategies[type]
+    end
   end
 end
